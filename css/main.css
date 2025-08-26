@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --clr-black: #1c1c1c;
+    --clr-gray: #ececec;
+    --clr-white: #f7f7f7;
+
+    --type-normal:#A8A878;
+    --type-fire:#F08030;
+    --type-water:#6890F0;
+    --type-grass:#78C850;
+    --type-electric:#F8D030;
+    --type-ice:#9890B0;
+    --type-figthing:#C03028;
+    --type-poison:#A040A0;
+    --type-ground:#E0C068;
+    --type-flying:#A890F0;
+    --type-pychic:#F85888;
+    --type-bug:#A8B820;
+    --type-rock:#B8A038;
+    --type-ghost:#705898;
+    --type-dark:#705848;
+    --type-dragon:#7038f8;
+    --type-steel:#B8B8d0;
+    --type-fairy:#f0b6bc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--clr-black);
+    font-family: 'rubik', sans-serif;
+}
+
+ul{
+    list-style-type: none;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+.normal {
+    background-color: var(--type-normal);
+    border: 0;
+    border-radius: 0;
+}
+
+.fire {
+    background-color: var(--type-fire);
+    border: 0;
+    border-radius: 0;
+}
+
+.water {
+    background-color: var(--type-water);
+    border: 0;
+    border-radius: 0;
+}
+
+.grass {
+    background-color: var(--type-grass);
+    border: 0;
+    border-radius: 0;
+}
+
+.electric {
+    background-color: var(--type-electric);
+    border: 0;
+    border-radius: 0;
+}
+
+.ice {
+    background-color: var(--type-ice);
+    border: 0;
+    border-radius: 0;
+}
+
+.figthing {
+    background-color: var(--type-figthing);
+    border: 0;
+    border-radius: 0;
+}
+
+.poison {
+    background-color: var(--type-poison);
+    border: 0;
+    border-radius: 0;
+}
+
+.ground {
+    background-color: var(--type-ground);
+    border: 0;
+    border-radius: 0;
+}
+
+.flying {
+    background-color: var(--type-flying);
+    border: 0;
+    border-radius: 0;
+}
+
+.pychic {
+    background-color: var(--type-pychic);
+    border: 0;
+    border-radius: 0;
+}
+
+.bug {
+    background-color: var(--type-bug);
+    border: 0;
+    border-radius: 0;
+}
+
+.rock {
+    background-color: var(--type-rock);
+    border: 0;
+    border-radius: 0;
+}
+
+.ghost {
+    background-color: var(--type-ghost);
+    border: 0;
+    border-radius: 0;
+}
+
+.dark {
+    background-color: var(--type-dark);
+    border: 0;
+    border-radius: 0;
+}
+
+.dragon {
+    background-color: var(--type-dragon);
+    border: 0;
+    border-radius: 0;
+}
+
+.steel {
+    background-color: var(--type-steel);
+    border: 0;
+    border-radius: 0;
+}
+
+.fairy {
+    background-color: var(--type-fairy);
+    border: 0;
+    border-radius: 0;
+}
+
+
