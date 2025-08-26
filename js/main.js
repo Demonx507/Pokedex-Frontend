@@ -1,19 +1,19 @@
-const listapokemon = document.querySelector("#listapokemon");
+const listaPokemon = document.querySelector("#listaPokemon");
 let URL = "https://pokeapi.co/api/v2/pokemon/";
 
 for (let i = 1; i <= 151; i++) {
     fetch(URL + i)
         .then((response) => response.json())
-        .then(data => mostrarpokemon(data));
+        .then(data => mostrarPokemon(data));
 }
 
-function mostrarpokemon(poke) {
-    const div =document.createElement("div");
+function mostrarPokemon(poke) {
+    const div = document.createElement("div");
     div.classList.add("pokemon");
     div.innerHTML = `
-        <p class="pokemon-id-back">${poke.id}</p>
+        <p class="pokemon-id-back">#${poke.id}</p>
         <div class="pokemon-imagen">
-            <img src="${poke.sprites.other['fficial-artwork'].front_default}" alt="${poke.name}">    
+            <img src="${poke.sprites.other["official-artwork"].front_default}" alt="${poke.name}">    
         </div>
         <div class="pokemon-info">
             <div class="nombre-contenedor">
