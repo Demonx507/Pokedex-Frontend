@@ -9,6 +9,9 @@ async function cargarPokemons() {
             const response = await fetch(URL + i);
             const data = await response.json();
             todosLosPokemons.push(data);
+            
+            mostrarPokemon(data);
+
         } catch (error) {
             console.error("Error cargando el Pokémon " + i, error);
         }
