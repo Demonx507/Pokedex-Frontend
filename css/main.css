@@ -101,8 +101,8 @@ main {
 
 .pokemon-todos {
     display: grid;
-    grid-template-columns: 1fr;
     gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 @media screen and (min-width: 470px) {
@@ -111,9 +111,9 @@ main {
     }
 }
 
-@media screen and (min-width: 700px){
+@media screen and (min-width: 1024px){
     .pokemon-todos{
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr ;
     }
 }
 
