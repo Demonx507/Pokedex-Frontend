@@ -1,5 +1,5 @@
 const listaPokemon = document.querySelector("#listaPokemon");
-const botonesHeader = document.querySelectorAll(".btn-header")
+const botonesHeader = document.querySelectorAll(".btn")
 let URL = "https://pokeapi.co/api/v2/pokemon/";
 let todosLosPokemons = [];
 
