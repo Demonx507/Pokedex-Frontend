@@ -1,5 +1,8 @@
 const listaPokemon = document.querySelector("#listaPokemon");
-const botonesHeader = document.querySelectorAll(".btn")
+const botonesHeader = document.querySelectorAll(".btn");
+const searchInput = document.querySelector("#searchInput");
+const searchBtn = document.querySelector("#search-btn")
+
 let URL = "https://pokeapi.co/api/v2/pokemon/";
 let todosLosPokemons = [];
 
@@ -19,6 +22,30 @@ async function cargarPokemons() {
     } 
     mostrarListaPokemons(todosLosPokemons)
 }
+
+function buscarPokemon(){
+    const texto = searchInput.value.toLowerCase().trim();
+
+    if (texto == ""){
+        mostrarListaPokemons(todosLosPokemons);
+        return;
+    }
+
+    const resultado = todosLosPokemons.filter(poke =>
+        poke.name.toLowerCase().includes(texto) ||
+        poke.id.toString() === texto
+    );
+    mostrarListaPokemons(resultado);
+}
+
+searchBtn.addEventListener("click", buscarPokemon);
+
+searchInput.addEventListener("keyup", (Event) => {
+    if (Event.key === "Enter"){
+        buscarPokemon();
+    }
+})
+
 
 function mostrarListaPokemons(lista) {
     listaPokemon.innerHTML = "";
