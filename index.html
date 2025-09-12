@@ -8,32 +8,37 @@
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    <header>
-        <nav class="nav">
-            <img src="./img/pokedex3d.jpeg" alt="Logo Pokédex">
-            <ul class="nav-list">
-                <li class="nav-item"><button class="btn btn-header ver-todos" id="ver-todos">Ver Todos</button></li>
-                <li class="nav-item"><button class="btn btn-header normal" id="normal">Normal</button></li>
-                <li class="nav-item"><button class="btn btn-header fire" id="fire">Fire</button></li>
-                <li class="nav-item"><button class="btn btn-header water" id="water">Water</button></li>
-                <li class="nav-item"><button class="btn btn-header grass" id="grass">Grass</button></li>
-                <li class="nav-item"><button class="btn btn-header electric" id="electric">Electric</button></li>
-                <li class="nav-item"><button class="btn btn-header ice" id="ice">Ice</button></li>
-                <li class="nav-item"><button class="btn btn-header fighting" id="fighting">Fighting</button></li>
-                <li class="nav-item"><button class="btn btn-header poison" id="poison">Poison</button></li>
-                <li class="nav-item"><button class="btn btn-header ground" id="ground">Ground</button></li>
-                <li class="nav-item"><button class="btn btn-header flying" id="flying">Flying</button></li>
-                <li class="nav-item"><button class="btn btn-header psychic" id="psychic">Psychic</button></li>
-                <li class="nav-item"><button class="btn btn-header bug" id="bug">Bug</button></li>
-                <li class="nav-item"><button class="btn btn-header rock" id="rock">Rock</button></li>
-                <li class="nav-item"><button class="btn btn-header ghost" id="ghost">Ghost</button></li>
-                <li class="nav-item"><button class="btn btn-header dark" id="dark">Dark</button></li>
-                <li class="nav-item"><button class="btn btn-header dragon" id="dragon">Dragon</button></li>
-                <li class="nav-item"><button class="btn btn-header steel" id="steel">Steel</button></li>
-                <li class="nav-item"><button class="btn btn-header fairy" id="fairy">Fairy</button></li>
-            </ul>
-        </nav>
+    <header class="header">
+            <img src="./img/pokedex3d.jpeg" alt="Logo Pokédex" class="logo">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Buscar Pokémon por nombre o ID" class="search-bar">
+                <button type="button" id="search-btn">Buscar</button>🔍
+                <div id="resultado" ></div>
+            </div>
     </header>
+        <section class="filters">
+            <ul>
+                <li><button class="btn ver-todos" id="ver-todos">Ver Todos</button></li>
+                <li><button class="btn normal" id="normal">Normal</button></li>
+                <li><button class="btn fire" id="fire">Fire</button></li>
+                <li><button class="btn water" id="water">Water</button></li>
+                <li><button class="btn grass" id="grass">Grass</button></li>
+                <li><button class="btn electric" id="electric">Electric</button></li>
+                <li><button class="btn ice" id="ice">Ice</button></li>
+                <li><button class="btn fighting" id="fighting">Fighting</button></li>
+                <li><button class="btn poison" id="poison">Poison</button></li>
+                <li><button class="btn ground" id="ground">Ground</button></li>
+                <li><button class="btn flying" id="flying">Flying</button></li>
+                <li><button class="btn psychic" id="psychic">Psychic</button></li>
+                <li><button class="btn bug" id="bug">Bug</button></li>
+                <li><button class="btn rock" id="rock">Rock</button></li>
+                <li><button class="btn ghost" id="ghost">Ghost</button></li>
+                <li><button class="btn dark" id="dark">Dark</button></li>
+                <li><button class="btn dragon" id="dragon">Dragon</button></li>
+                <li><button class="btn steel" id="steel">Steel</button></li>
+                <li><button class="btn fairy" id="fairy">Fairy</button></li>
+            </ul>
+        </section>
     <main>
         <div id="todos">
             <div class="pokemon-todos" id="listaPokemon">
