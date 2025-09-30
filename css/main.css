@@ -132,6 +132,8 @@ main {
 }
 
 .pokemon {
+    transition: transform 0.3s ease;
+    cursor: pointer;
     border-radius: 1rem;
     background-color: var(--clr-white);
     box-shadow: 0 0 3rem -1rem rgba(0, 0, 0, .25);
@@ -140,6 +142,11 @@ main {
     position: relative;
     isolation: isolate;
     overflow: hidden;
+}
+
+.pokemon:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .pokemon-id-back {
@@ -162,6 +169,11 @@ main {
 .pokemon-imagen img{
     width: 100%;
     max-width: 6rem;
+    transition: transform 0.3s ease;
+}
+
+.pokemon-imagen img:hover {
+    transform: scale(1.1);
 }
 
 .pokemon-info {

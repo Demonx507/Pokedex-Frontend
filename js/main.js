@@ -3,7 +3,7 @@ const botonesHeader = document.querySelectorAll(".btn");
 const searchInput = document.querySelector("#searchInput");
 const searchBtn = document.querySelector("#search-btn")
 
-let URL = "http://localhost:3000/pokemon/";
+let URL = "https://pokeapi.co/api/v2/ability/1/";
 let todosLosPokemons = [];
 
 async function cargarPokemons() {
