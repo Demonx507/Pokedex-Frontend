@@ -1,9 +1,11 @@
 const listaPokemon = document.querySelector("#listaPokemon");
 const botonesHeader = document.querySelectorAll(".btn");
 const searchInput = document.querySelector("#searchInput");
-const searchBtn = document.querySelector("#search-btn")
+const searchBtn = document.querySelector("#search-btn");
+const pokemonsPerPage = 20;
 
-let URL = "https://pokeapi.co/api/v2/ability/1/";
+let currentPage = 1;
+let URL = "https://pokeapi.co/api/v2/pokemon/";
 let todosLosPokemons = [];
 
 async function cargarPokemons() {
@@ -49,7 +51,50 @@ searchInput.addEventListener("keyup", (Event) => {
 
 function mostrarListaPokemons(lista) {
     listaPokemon.innerHTML = "";
-    lista.forEach(poke => mostrarPokemon(poke));
+    
+    const start = (currentPage - 1) * pokemonsPerPage;
+    const end = start + pokemonsPerPage;
+
+    const pokemonsPagina = lista.slice(start, end);
+    
+    pokemonsPagina.forEach(poke => mostrarPokemon(poke));
+
+    mostrarControles(lista.length);
+}
+
+
+function mostrarControles(totalPokemons){
+    const paginacion = document.querySelector("#paginacion");
+    paginacion.innerHTML = "";
+
+    const totalPages = Math.ceil(totalPokemons / pokemonsPerPage);
+
+    if (currentPage > 1){
+        const btnPrev = document.createElement("button");
+        btnPrev.textContent = "Anterior";
+        btnPrev.classList.add("btn-paginacion");
+        btnPrev.addEventListener("click", () => {
+            currentPage--;
+            mostrarListaPokemons(todosLosPokemons);
+        });
+        paginacion.appendChild(btnPrev);
+    }
+
+    const span = document.createElement("span");
+    span.classList.add("pagina-info");
+    span.textContent =  `Pagina ${currentPage} de ${totalPages}`;
+    paginacion.appendChild(span);
+
+    if (currentPage < totalPages){
+        const btnNext = document.createElement("button");
+        btnNext.textContent = "Siguiente";
+        btnNext.classList.add("btn-paginacion");
+        btnNext.addEventListener("click", () => {
+            currentPage++;
+            mostrarListaPokemons(todosLosPokemons);
+        });
+        paginacion.appendChild(btnNext);
+    }
 }
 
 function mostrarPokemon(poke) {

@@ -93,6 +93,37 @@ body    {
     transform: scale(1.3);
 }
 
+#paginacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn-paginacion {
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-paginacion:hover {
+    background-color: #ff6b81;
+    transform: scale(1.1);
+}
+
+.pagina-info {
+    font-weight: bold;
+    font-size: 14px;
+    color: #2f3542;
+}
+
 .filters {
     margin-top: 2rem;
     text-align: center;
