@@ -98,9 +98,7 @@ function mostrarControles(totalPokemons){
 }
 
 function mostrarPokemon(poke) {
-
     let tipos = poke.types.map((type) => `<p class="${type.type.name}">${type.type.name}</p>`).join('');
-
     let pokeId = poke.id.toString().padStart(3, "0");
 
     const div = document.createElement("div");
@@ -114,17 +112,78 @@ function mostrarPokemon(poke) {
             <div class="nombre-contenedor">
                 <p class="pokemon-id">#${pokeId}</p>
                 <h2 class="pokemon-nombre">${poke.name}</h2>
+                <button class="btn-favorito" data-id="${poke.id}">⭐</button>
             </div>
             <div class="pokemon-tipos">
                 ${tipos}
             </div>
             <div class="pokemon-stats">
-                    <p class="stat">${poke.height}m</p>
-                    <p class="stat">${poke.weight}kg</p>
+                <p class="stat">${poke.height}m</p>
+                <p class="stat">${poke.weight}kg</p>
             </div>
         </div>
     `;
     listaPokemon.append(div);
+    const btnFav = div.querySelector(".btn-favorito");
+    btnFav.addEventListener("click", () => toggleFavorito(poke));
+}
+
+function getFavoritos() {
+    return JSON.parse(localStorage.getItem("favoritos")) || [];
+}
+
+function saveFavoritos(lista) {
+    localStorage.setItem("favoritos", JSON.stringify(lista));
+}
+
+function toggleFavorito(poke) {
+    let favoritos = getFavoritos();
+    const existe = favoritos.find(p => p.id === poke.id);
+
+    if (existe) {
+        // eliminar si ya está
+        favoritos = favoritos.filter(p => p.id !== poke.id);
+    } else {
+        // agregar si no está
+        favoritos.push(poke);
+    }
+
+    saveFavoritos(favoritos);
+    mostrarFavoritos();
+}
+
+function mostrarFavoritos() {
+    const listaFavoritos = document.querySelector("#listaFavoritos");
+    listaFavoritos.innerHTML = "";
+
+    const favoritos = getFavoritos();
+    favoritos.forEach(poke => {
+        let tipos = poke.types.map((type) => `<p class="${type.type.name}">${type.type.name}</p>`).join('');
+        let pokeId = poke.id.toString().padStart(3, "0");
+
+        const div = document.createElement("div");
+        div.classList.add("pokemon");
+        div.innerHTML = `
+            <p class="pokemon-id-back">#${pokeId}</p>
+            <div class="pokemon-imagen">
+                <img src="${poke.sprites.other["official-artwork"].front_default}" alt="${poke.name}">    
+            </div>
+            <div class="pokemon-info">
+                <div class="nombre-contenedor">
+                    <p class="pokemon-id">#${pokeId}</p>
+                    <h2 class="pokemon-nombre">${poke.name}</h2>
+                </div>
+                <div class="pokemon-tipos">
+                    ${tipos}
+                </div>
+                <div class="pokemon-stats">
+                    <p class="stat">${poke.height}m</p>
+                    <p class="stat">${poke.weight}kg</p>
+                </div>
+            </div>
+        `;
+        listaFavoritos.append(div);
+    });
 }
 
 botonesHeader.forEach(boton => boton.addEventListener("click", (event) =>{
@@ -138,7 +197,7 @@ botonesHeader.forEach(boton => boton.addEventListener("click", (event) =>{
         );
         mostrarListaPokemons(filtrados);
     }
-
 }));
 
 cargarPokemons();
+mostrarFavoritos();

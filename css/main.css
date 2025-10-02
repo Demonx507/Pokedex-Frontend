@@ -93,6 +93,20 @@ body    {
     transform: scale(1.3);
 }
 
+.btn-favorito {
+    background: none;
+    border: nobe;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: transform 0.2s;
+}
+
+.btn-favorito:hover {
+    transform: scale(1.2);
+    color: gold;
+}
+
 #paginacion {
     display: flex;
     justify-content: center;
