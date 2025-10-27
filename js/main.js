@@ -124,6 +124,7 @@ function mostrarPokemon(poke) {
         </div>
     `;
     listaPokemon.append(div);
+    
     const btnFav = div.querySelector(".btn-favorito");
     btnFav.addEventListener("click", () => toggleFavorito(poke));
 }
@@ -141,10 +142,8 @@ function toggleFavorito(poke) {
     const existe = favoritos.find(p => p.id === poke.id);
 
     if (existe) {
-        // eliminar si ya está
         favoritos = favoritos.filter(p => p.id !== poke.id);
     } else {
-        // agregar si no está
         favoritos.push(poke);
     }
 
