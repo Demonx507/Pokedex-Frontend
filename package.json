@@ -1,0 +1,33 @@
+{
+  "name": "pokedex-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:html": "html-minifier-terser index.html -o dist/index.html --collapse-whitespace --remove-comments --minify-css true --minify-js true",
+    "build:css": "cleancss -o dist/css/main.css css/main.css",
+    "build:js": "terser js/main.js -o dist/js/main.js -c -m",
+    "build:img": "imagemin img/* --plugin=pngquant --plugin=mozjpeg --out-dir=dist/img",
+    "build": "mkdir dist && npm run build:html && npm run build:css && npm run build:js && npm run build:img"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Demonx507/Pokedex-Frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Demonx507/Pokedex-Frontend/issues"
+  },
+  "homepage": "https://github.com/Demonx507/Pokedex-Frontend#readme",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "html-minifier-terser": "^7.2.0",
+    "imagemin-cli": "^8.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^10.0.0",
+    "shx": "^0.3.4",
+    "terser": "^5.44.0"
+  }
+}
